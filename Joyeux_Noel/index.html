@@ -1,16 +1,60 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="bg-wrap">
 
 <head>
     <meta charset="utf-8">
-    <title>Joyeux Noel Zoé</title>
+    <title>Joyeux Noel Zoé (Encore)</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
-<body style="background-color: black">
-    <img src="Joyeux Noel.svg" alt="">
+<body style="text-align: center; width: 100%; margin-top: 40px; padding: 20px 0;">
+    
+    <div class="container">
+        <div id="lock" class="lock">
+            <svg xmlns="http://www.w3.org/2000/svg" height="100%" length="auto" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/></svg>
+        </div>
 
-    <div style="text-align: center; width: 100%; margin-top: 40px">
-        <a style="background-color: #00486c; padding: 5px 15px; border-radius:10px; color: white; font-weight:bold" href="Joyeux Noel.pdf" target="_blank">Télécharger ici</a>
+        <div>
+            <script>
+                $(document).ready(function(){
+                    $('#form-1').submit(function(){
+                        if ($("#number-1").val() != "8" || $("#number-2").val() != "7" || $("#number-3").val() != "1" || $("#number-4").val() != "3") {
+                            $("#lock").addClass("invalid").trigger('classChange');
+                        } else {
+                            window.location.replace('cadeau.html');
+                        };
+                        return false
+                    });
+                    $('#lock').on('classChange', function() {
+                        setTimeout(function(){ 
+                            $('#lock').removeClass("invalid");
+                        }, 300);
+                    });
+                });
+            </script>
+            <form name="form-1" id="form-1" action="">
+
+                <input id="number-1" type="number" max="9" min="0" class="number-input" oninput="$(this).next('.number-input').focus().select()" onclick="$(this).select()">
+                <input id="number-2" type="number" max="9" min="0" class="number-input" oninput="$(this).next('.number-input').focus().select()" onclick="$(this).select()">
+                <input id="number-3" type="number" max="9" min="0" class="number-input" oninput="$(this).next('.number-input').focus().select()" onclick="$(this).select()">
+                <input id="number-4" type="number" max="9" min="0" class="number-input" oninput="$(this).blur()" onclick="$(this).select()">
+                
+                <input type="submit" class="submit-input" value="Valider">
+
+            </form>
+        </div>
+
+        <div style="text-align: left;">
+            <em><b>Enigme :</b></em>
+            <ul>
+                <li>Mon <span class="bold">premier</span> tient chaud au pied.</li>
+                <li>Mon <span class="bold">second</span> est très sucré.</li>
+                <li>Mon <span class="bold">troisieme</span> se passe sous l'eau.</li>
+                <li>Mon <span class="bold">quatière</span> arrive bientôt.</li>
+            </ul>
+            <span class="bold">Mon tout est la fin de chaque année.</span>
+        </div>
     </div>
 
 </body>
