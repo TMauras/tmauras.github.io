@@ -129,7 +129,7 @@ li {
     color: white;
     text-align: justify;
     text-align-last: justify;
-    letter-spacing: 16px;
+    letter-spacing: 15px;
 }
 
 .txt-festival-3 {
@@ -140,7 +140,7 @@ li {
     color: white;
     text-align: justify;
     text-align-last: justify;
-    letter-spacing: 10.5px;
+    letter-spacing: 10px;
 }
 
 
@@ -155,12 +155,12 @@ li {
     .txt-festival-2 {
         width: 400px;
         font-size: 20px;
-        letter-spacing: 6px;
+        letter-spacing: 5px;
     }
 
     .txt-festival-3 {
         width: 400px;
         font-size: 20px;
-        letter-spacing: 4px;
+        letter-spacing: 3px;
     }
 }
